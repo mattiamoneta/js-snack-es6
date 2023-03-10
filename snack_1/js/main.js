@@ -2,7 +2,7 @@
 // Ogni oggetto descriverà una bici da corsa con le seguenti proprietà: nome e peso.
 // Stampare a schermo la bici con peso minore utilizzando destructuring e template literal
 
-const ListabiciDaCorsa = [
+const ListaBiciDaCorsa = [
     {
         nome : "bici1",
         peso : 8
@@ -29,11 +29,14 @@ const ListabiciDaCorsa = [
 
 let soloPesi = [];
 
-ListabiciDaCorsa.forEach((e) => {
+ListaBiciDaCorsa.forEach((e) => {
     soloPesi.push(e.peso);
 });
 
-const biciPiuLeggera = ListabiciDaCorsa.filter((e) => e.peso == Math.max(...soloPesi));
 
-console.log(`La bici più leggera è la ${biciPiuLeggera.nome} con il peso di ${biciPiuLeggera.peso} kg`);
+const biciPiuLeggera = ListaBiciDaCorsa.filter((e) => e.peso == Math.max(...soloPesi));
+
+const {nome, peso} = biciPiuLeggera[0];
+
+console.log(`La bici più leggera è la ${nome} con il peso di ${peso} kg`);
 
